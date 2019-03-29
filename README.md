@@ -21,4 +21,5 @@ python 脚本主要基于 pushjack 支持 Python3
 
 warnning:  
 git上dev/dis 里的证书是我瞎写的文件，请自行下载导出
+导出p12文件时密码最好设置成111111，如果是其他请自行修改脚本。。
 params.plist 中的sound 和token请根据项目情况设置，payload就随你了，开心就好
