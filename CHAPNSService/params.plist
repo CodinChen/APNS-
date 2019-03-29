@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>extra</key>
+	<dict>
+		<key>payload</key>
+		<dict>
+			<key>key1</key>
+			<string>value1</string>
+			<key>key2</key>
+			<string>value2</string>
+			<key>key3</key>
+			<string>value3</string>
+			<key>key4</key>
+			<string>value4</string>
+		</dict>
+	</dict>
+	<key>sound</key>
+	<string>*****your song.wav</string>
+	<key>loc_key</key>
+	<string></string>
+	<key>action_loc_key</key>
+	<string></string>
+	<key>title_loc_args</key>
+	<string></string>
+	<key>title_loc_key</key>
+	<string></string>
+	<key>badge</key>
+	<integer>666</integer>
+	<key>alert</key>
+	<string>Motion Detect!</string>
+	<key>title</key>
+	<string>Doorbell up-test</string>
+	<key>tokens</key>
+	<array>
+		<string>****your iphone token</string>
+	</array>
+</dict>
+</plist>
