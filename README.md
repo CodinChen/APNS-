@@ -23,3 +23,10 @@ warnning:
 git上dev/dis 里的证书是我瞎写的文件，请自行下载导出
 导出p12文件时密码最好设置成111111，如果是其他请自行修改脚本。。
 params.plist 中的sound 和token请根据项目情况设置，payload就随你了，开心就好
+
+
+使用(以dev为例)：
+1、下载aps_development.cer
+2、导出cert.p12(密码设置为111111)和aps_development.cer文件一起放入./dev/文件夹下
+3、./params.plist中配置目标手机apns token 及推送参数 
+4、运行./ch_push.sh，默认为dev环境推送
