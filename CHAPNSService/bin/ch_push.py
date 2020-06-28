@@ -28,14 +28,15 @@ def push(cer,dic,isdev):
 	
 
 	sys.stdout = codecs.getwriter('utf-8')(sys.stdout.detach())
-	
+		
 	res = client.send(dic['tokens'],
 	                  dic['alert'],
 	                  badge = dic['badge'],
 	                  sound = dic['sound'],
 	                  title = dic['title'],
 	                  category='category',
-	                  content_available=True,
+	                  # content_available=false,
+	                  mutable_content=True,
 	                  # title_loc_key='t_loc_key',
 	                  # title_loc_args='t_loc_args',
 	                  # action_loc_key='a_loc_key',
@@ -77,9 +78,6 @@ def fillDictionary(str,dic):
 		left = left.partition('</%s>'%vt)[2]
 
 	if len(value) > 0:
-		if key == "payload":
-			if len(value) > 0 :
-				value=json.dumps(value)
 		dic[key]=value
 		print("key = %s \nvalue = %s"%(key,value))
 	
@@ -98,9 +96,16 @@ if __name__ == "__main__":
 		all = str.partition('<dict>')[2]
 		dic = {}
 		fillDictionary(all,dic)
+		if len(dic) > 0 and (len(dic["extra"]) == 1):
+			temp = dic["extra"]
+			key = list(temp.keys())[0]
+			value = temp[key]
+			if type(value) is dict and len(value) > 0:
+				value = json.dumps(value)
+			dic["extra"][key] = value
+
 		print(dic)
 
 	
-	if len(dic):
+	if len(dic) > 0:
 		push(all_dev,dic,isdev)	
-
